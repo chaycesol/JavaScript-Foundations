@@ -43,9 +43,10 @@ When your math is correct, monthlyRate will equal 1073.64
 const n1 = Math.pow((1 + monthlyInterestRate), periods);
 const numerator = n1 * monthlyInterestRate;
 const denominator = n1-1;
-let monthlyRate = (P * numerator)/ denominator;
+let monthly = (P * numerator)/ denominator;
+let monthlyRate = Math.round(monthly * 100) / 100;
 
-console.log(Math.round(monthlyRate * 100) / 100);
+console.log(monthlyRate);
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -53,11 +54,13 @@ console.log(Math.round(monthlyRate * 100) / 100);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator( 
-    console.log($(borrowerName)' , your monthly rate is ', $(monthlyRate));
-)
+function mortgageCalculator() {
+    return borrowerName + ', your monthly rate is ' + monthlyRate;
+}
 
-mortgageCalculator();
+console.log(mortgageCalculator());
+
+
 
 
 // 🏡 Task 4: Arguments and Parameters
