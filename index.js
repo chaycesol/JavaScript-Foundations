@@ -60,9 +60,6 @@ function mortgageCalculator() {
 
 console.log(mortgageCalculator());
 
-
-
-
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
@@ -70,7 +67,12 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function mortgageCalculation(P, I, N) {
+    let monthlyRate = P * ((monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods))) / (Math.pow((1+monthlyInterestRate), periods)-1) ;
+    return Math.round(monthlyRate*100)/100;
+}
 
+console.log(mortgageCalculation(200000, 0.05, 30));
 
 
 
@@ -82,7 +84,12 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
+function mortgageCalculation(P, I, N, C) {
+    let monthlyRate = P * (((monthlyInterestRate*creditScore) * Math.pow((1+(monthlyInterestRate*creditScore)), periods))) / (Math.pow((1+monthlyInterestRate), periods)-1) ;
+    return Math.round(monthlyRate*100)/100;
+}
 
+console.log(mortgageCalculation(200000, 0.05, 30));
 
 
 // 🏡 Task 6: Loops
