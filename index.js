@@ -4,8 +4,10 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-
-
+const principal = 200000;
+const interestRate = 0.05;
+const years = 30;
+borrowerName = 'Chayce';
 
 
 // 🏡 Task 1.5: Simple Math
@@ -15,7 +17,8 @@
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-
+const monthlyInterestRate = interestRate/12;
+const periods = years *12;
 
 
 // 🏡 Task 2: Harder Math
@@ -36,7 +39,20 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+/*let n1 = Math.pow((1 + interestRate), periods);
+let n2 = n1 * interestRate;
+const numerator = n1 * n2;
+const denominator = n1 - 1 ;
+let monthlyRate = numerator / denominator;*/
 
+const n1 = 1+interestRate;
+const n2 = periods-1;
+const numer = Math.pow(n1, periods);
+const denom = Math.pow(n1, n2);
+
+monthlyRate = principal*((interestRate * numer) / denom);
+
+console.log(monthlyRate);
 
 
 // 🏡 Task 3: Function
